@@ -12,5 +12,5 @@ provider "cloudflare" {
 }
 
 resource "cloudflare_zone" "letsbuilda_dev" {
-  zone       = "letsbuilda.dev"
+  zone = "letsbuilda.dev"
 }
