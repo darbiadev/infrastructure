@@ -6,10 +6,10 @@ on:
     branches:
       - main
     paths:
-      - **.tf
+      - '**.tf'
   pull_request:
     paths:
-      - **.tf
+      - '**.tf'
 
 jobs:
   lint:    
