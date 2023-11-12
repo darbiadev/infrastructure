@@ -1,4 +1,4 @@
-name: Deploy to Azure
+name: "Deploy to Azure"
 
 on:
   workflow_dispatch:
@@ -12,13 +12,15 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: "Checkout repository"
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
-      - uses: azure/login@v1
+      - name: "Login to Azure"
+        uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.6
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: deploy
+      - name: "Deploy"
         shell: pwsh
         run: |
           cd ./infrastructure/azure/
